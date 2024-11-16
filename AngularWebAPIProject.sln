@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebAPIProject", "AngularWebAPIProject\AngularWebAPIProject.csproj", "{7D2108D1-2825-4F38-BB91-A43C5E755F57}"
+	ProjectSection(ProjectDependencies) = postProject
+		{064A1A38-20A0-4DF2-8FDB-50DDCB9801EF} = {064A1A38-20A0-4DF2-8FDB-50DDCB9801EF}
+		{73C046A9-46AF-434C-A2D3-6788A38B8085} = {73C046A9-46AF-434C-A2D3-6788A38B8085}
+		{F9F3F6CD-5DBA-4646-84BF-0A56115BDCCB} = {F9F3F6CD-5DBA-4646-84BF-0A56115BDCCB}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebAPIProject.BAL", "AngularWebAPIProject.BAL\AngularWebAPIProject.BAL.csproj", "{F9F3F6CD-5DBA-4646-84BF-0A56115BDCCB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{064A1A38-20A0-4DF2-8FDB-50DDCB9801EF} = {064A1A38-20A0-4DF2-8FDB-50DDCB9801EF}
+		{73C046A9-46AF-434C-A2D3-6788A38B8085} = {73C046A9-46AF-434C-A2D3-6788A38B8085}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebAPIProject.DAL", "AngularWebAPIProject.DAL\AngularWebAPIProject.DAL.csproj", "{064A1A38-20A0-4DF2-8FDB-50DDCB9801EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularWebAPIProject.Model", "AngularWebAPIProject.Model\AngularWebAPIProject.Model.csproj", "{73C046A9-46AF-434C-A2D3-6788A38B8085}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7D2108D1-2825-4F38-BB91-A43C5E755F57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D2108D1-2825-4F38-BB91-A43C5E755F57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D2108D1-2825-4F38-BB91-A43C5E755F57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D2108D1-2825-4F38-BB91-A43C5E755F57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9F3F6CD-5DBA-4646-84BF-0A56115BDCCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9F3F6CD-5DBA-4646-84BF-0A56115BDCCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9F3F6CD-5DBA-4646-84BF-0A56115BDCCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9F3F6CD-5DBA-4646-84BF-0A56115BDCCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{064A1A38-20A0-4DF2-8FDB-50DDCB9801EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{064A1A38-20A0-4DF2-8FDB-50DDCB9801EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{064A1A38-20A0-4DF2-8FDB-50DDCB9801EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{064A1A38-20A0-4DF2-8FDB-50DDCB9801EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C046A9-46AF-434C-A2D3-6788A38B8085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C046A9-46AF-434C-A2D3-6788A38B8085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C046A9-46AF-434C-A2D3-6788A38B8085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C046A9-46AF-434C-A2D3-6788A38B8085}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52EC5B9C-4486-4B18-88EF-34B84F823F49}
+	EndGlobalSection
+EndGlobal
