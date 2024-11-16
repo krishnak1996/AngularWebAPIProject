@@ -23,7 +23,6 @@ namespace AngularWebAPIProject.BAL.Service
             this.mapper = mapper;
         }
 
-
         /// <summary>
         /// Get Buyers By PFID
         /// </summary>
