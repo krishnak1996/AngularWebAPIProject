@@ -15,5 +15,6 @@
         public DateTime? CreatedOn { get; set; }
         public int? ModifiedBy { get; set; }
         public DateTime? ModifiedOn { get; set; }
+        public int? RoleId { get; set; }
     }
 }

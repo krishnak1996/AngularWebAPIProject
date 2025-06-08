@@ -9,6 +9,8 @@ namespace AngularWebAPIProject.BAL.Interface
 {
     public interface IAccount
     {
-        ResponseModel Login(LoginModel loginModel);
+        LoginResponseModel Login(LoginModel loginModel);
+
+        List<RoleModel> GetRole();
     }
 }

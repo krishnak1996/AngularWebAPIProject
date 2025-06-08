@@ -8,53 +8,67 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace AngularWebAPIProject.BAL.Service
 {
     public class AccountService : IAccount
     {
         private readonly DatabaseContext dbContext;
-        public AccountService(DatabaseContext dbContext)
+        private readonly IMapper mapper;
+        public AccountService(DatabaseContext dbContext, IMapper mapper)
         {
             this.dbContext = dbContext;
+            this.mapper = mapper;
         }
+
 
         /// <summary>
         /// Login
         /// </summary>
-        /// <param name="username"></param>
-        /// <param name="password"></param>
+        /// <param name="loginModel"></param>
         /// <returns></returns>
-        public ResponseModel Login(LoginModel loginModel)
+        public LoginResponseModel Login(LoginModel loginModel)
         {
-            ResponseModel responseModel = new();
+            LoginResponseModel loginResponseModel = new();
             if (!string.IsNullOrEmpty(loginModel.Email) && !string.IsNullOrEmpty(loginModel.Password))
             {
-                var IsUserExist = dbContext.ApplicationUser.Where(u => u.Email == loginModel.Email && u.Password == loginModel.Password).Any();
-                if (IsUserExist)
+                var user = dbContext.ApplicationUser.Where(u => u.Email == loginModel.Email && u.Password == loginModel.Password).FirstOrDefault();
+                if (user!=null)
                 {
-                    responseModel.Id = 1;
-                    responseModel.Status = HttpStatusCode.OK.ToString();
-                    responseModel.Message = "Login Success";
-                    responseModel.Data = null;
+                    loginResponseModel.EmailAddress = loginModel.Email;
+                    loginResponseModel.UserName = user.FirstName;
+                    loginResponseModel.UserId = user.Id;
+                    loginResponseModel.RoleId = user.RoleId;
+                    loginResponseModel.Status = HttpStatusCode.OK.ToString();
+                    loginResponseModel.Message = "Login Success !";
                 }
                 else
                 {
-                    responseModel.Id = -1;
-                    responseModel.Status = HttpStatusCode.OK.ToString();
-                    responseModel.Message = "Login Failed";
-                    responseModel.Data = null;
+                    loginResponseModel.Status = HttpStatusCode.OK.ToString();
+                    loginResponseModel.Message = "Login Failed";
+                    loginResponseModel.EmailAddress = loginModel.Email;
                 }
             }
             else
             {
-                responseModel.Id = 0;
-                responseModel.Status = HttpStatusCode.OK.ToString();
-                responseModel.Message = "Please Enter Username and Password";
-                responseModel.Data = null;
+                loginResponseModel.Status = HttpStatusCode.OK.ToString();
+                loginResponseModel.Message = "Please Enter Username and Password";
+                loginResponseModel.EmailAddress = null;
             }
-            return responseModel;
+            return loginResponseModel;
         }
 
+        /// <summary>
+        /// Get Role
+        /// </summary>
+        /// <returns></returns>
+        public List<RoleModel> GetRole()
+        {
+            List<RoleModel> roleModels = new();
+            var roles = dbContext.RoleMaster.Where(u => u.IsActive == true).ToList();
+            roleModels = mapper.Map<List<RoleModel>>(roles);
+            return roleModels;
+        }
     }
 }

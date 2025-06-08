@@ -1,11 +1,13 @@
 ﻿using AngularWebAPIProject.BAL.Interface;
 using AngularWebAPIProject.DAL;
 using AngularWebAPIProject.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AngularWebAPIProject.Controllers
 {
+    [Authorize]
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class BuyersAPIController : ControllerBase

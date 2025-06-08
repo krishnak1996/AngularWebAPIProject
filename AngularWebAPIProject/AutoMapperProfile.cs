@@ -11,6 +11,7 @@ namespace AngularWebAPIProject
             CreateMap<UserModel, ApplicationUser>().ReverseMap();
             CreateMap<RecordOpeningModel, RecordOpening>().ReverseMap();
             CreateMap<BuyersModel, Buyers>().ReverseMap();
+            CreateMap<RoleModel, RoleMaster>().ReverseMap();
         }
     }
 }
